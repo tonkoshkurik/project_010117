@@ -1,6 +1,8 @@
 <?php
 class Route
 {
+    private $components;
+
 	static function start()
 	{
 		// контроллер и действие по умолчанию
@@ -20,8 +22,6 @@ class Route
 		{
 			$action_name = explode('?', $routes[2]);
       $action_name = $action_name[0];
-//		var_dump($action_name);
-//		exit();
 		}
 
 		// добавляем префиксы
@@ -54,12 +54,13 @@ class Route
 		$controller = new $controller_name;
 		$action = $action_name;
 
+//    var_dump($action);exit;
 //    var_dump(get_declared_classes());exit;
 
 		if(method_exists($controller, $action))
 		{
 			// вызываем действие контроллера
-			$controller->$action();
+			return $controller->$action();
 		}
 		else
 		{
@@ -71,8 +72,16 @@ class Route
 	function ErrorPage404()
 	{
 		$host = 'http://'.$_SERVER['HTTP_HOST'].'/';
-    header('HTTP/1.1 404 Not Found');
+        header('HTTP/1.1 404 Not Found');
 		header("Status: 404 Not Found");
 		header('Location:'.$host.'404');
   }
+
+    public function addComponent($name, $component_cls) {
+        $this->components[$name] = new $component_cls;
+    }
+
+    public function getComponent($name) {
+        return $this->components[$name];
+    }
 }

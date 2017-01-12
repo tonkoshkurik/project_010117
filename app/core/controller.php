@@ -15,12 +15,15 @@ class Controller {
 	}
 	public function db()
 	{
-			$con = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-			if ($con->connect_errno) {
-				printf("Connect failed: %s\n", $con->connect_error);
-				exit();
-			}
-			return $con;
+		return App::getInstance()->getComponent('db');
+	}
+
+	public function check_user_role(){
+		$user = App::getInstance()->getComponent('auth')->getCurrentUser();
+		if ($user){
+			return $user->role;
+		}
+		return false;
 	}
 }
 ?>

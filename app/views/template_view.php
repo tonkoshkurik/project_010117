@@ -9,7 +9,7 @@
   <!-- Styles -->
   <?php
     $host = 'http://' . $_SERVER['HTTP_HOST']; // для правильной подгрузки стилей и скриптов
-  ?> 
+  ?>
 <!--  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>-->
   <link href="<?php echo $host; ?>/assets/plugins/pace-master/themes/blue/pace-theme-flash.css" rel="stylesheet" type="text/css"//>
   <link href="<?php echo $host; ?>/assets/plugins/uniform/css/uniform.default.min.css" rel="stylesheet" type="text/css"//>
@@ -28,6 +28,22 @@
   <link href="<?php echo $host; ?>/assets/css/custom.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="<?php echo $host; ?>/assets/plugins/bootstrap-datepicker/css/datepicker.css">
   <link rel="stylesheet" href="<?php echo $host; ?>/css/bootstrap-switch.min.css">
+  <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+  <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <!-- NProgress -->
+  <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
+    <!-- iCheck -->
+  <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!-- bootstrap-progressbar -->
+  <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
+    <!-- PNotify -->
+  <link href="../vendors/pnotify/dist/pnotify.css" rel="stylesheet">
+  <link href="../vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
+  <link href="../vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
+
+    <!-- Custom Theme Style -->
+  <link href="../build/css/custom.min.css" rel="stylesheet">
   <style>
     div.checker {
       display: none;
@@ -159,7 +175,7 @@
             <li><a href="/admin/notification" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-envelope"></span> Add notification</a></li>
         <li><a href="/clients" class="waves-effect waves-button"><span class="menu-icon glyphicon glyphicon-user"></span> Clients</a></li>
 
-			
+
 			<li>
               <a href="/admin/logout" class="log-out waves-effect waves-button waves-classic">
                 <span><i class="fa fa-sign-out m-r-xs"></i>Log out</span>

@@ -8,5 +8,7 @@
  */
 class Controller_Front extends Controller
 {
-
+    public function action_index(){
+        
+    }
 }

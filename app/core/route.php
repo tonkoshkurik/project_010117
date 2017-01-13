@@ -6,7 +6,7 @@ class Route
 	static function start()
 	{
 		// контроллер и действие по умолчанию
-		$controller_name = 'Main';
+		$controller_name = 'Front';
 		$action_name = 'index';
 
 		$routes = explode('/', $_SERVER['REQUEST_URI']);
@@ -83,5 +83,9 @@ class Route
 
     public function getComponent($name) {
         return $this->components[$name];
+    }
+
+    public function redirect(){
+
     }
 }

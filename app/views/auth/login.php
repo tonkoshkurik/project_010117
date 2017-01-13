@@ -5,7 +5,7 @@
  * Date: 11.01.2017
  * Time: 15:57
  */
-//var_dump($_POST);
+var_dump($_POST);
 ?>
 <!--<form action="" method="post">-->
 <!--    <input type="text" name="login" placeholder="login">-->

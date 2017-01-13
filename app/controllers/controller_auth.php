@@ -11,8 +11,8 @@ class Controller_Auth extends Controller
     public function action_index() {
         $user = App::getInstance()->getComponent('auth')->getCurrentUser();
         if ($user) {
-
-            echo $this->view->render('default_tpl/index.php');
+            header('Location: /');
+//            echo $this->view->render('default_tpl/index.php');
         } else {
             return $this->action_login();
         }

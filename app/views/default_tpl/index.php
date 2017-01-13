@@ -5,7 +5,7 @@
  * Date: 11.01.2017
  * Time: 17:33
  */
-//var_dump($data['user']);
+//var_dump($data);
 //session_start();
 //var_dump($_SESSION);
 ?>

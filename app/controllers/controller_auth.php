@@ -9,6 +9,7 @@ class Controller_Auth extends Controller
     }
 
     public function action_index() {
+//        App::getInstance()->getComponent('auth')->middleware($this->getComponent('db'));
         $user = App::getInstance()->getComponent('auth')->getCurrentUser();
         if ($user) {
             header('Location: /');
@@ -50,5 +51,10 @@ class Controller_Auth extends Controller
 
         echo $this->view->render('/auth/login.php');
         die();
+    }
+
+    public function action_logout(){
+        App::getInstance()->getComponent('auth')->logout();
+        header('Location: /');
     }
 }

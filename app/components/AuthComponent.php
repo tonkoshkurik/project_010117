@@ -31,13 +31,18 @@ final class AuthComponent extends Component
      */
     public function registration($db_component, $first_name, $last_name, $login, $email, $password) {
         $connection = $db_component->connect();
+        $stmt = $connection->prepare('SELECT * FROM `users` WHERE login = :login');
+        $stmt->execute([':login' => $login]);
+        $user = $stmt->fetch(\PDO::FETCH_OBJ);
+        if($user){
+            return false;
+        }
+
         $stmt = $connection->prepare('INSERT INTO `users` (login, email, password, first_name, last_name) 
                                         VALUES (:login, :email, :password, :first_name, :last_name)');
         $hash_password = $this->createHashPassword($this->config['secret_key'], $password);
         $stmt->execute([':login' => $login, ':email' => $email, ':password' => $hash_password, ':first_name' => $first_name, ':last_name' => $last_name]);
-//        $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $connection->lastInsertId();
-//        return $result["id"];
     }
 
     /**

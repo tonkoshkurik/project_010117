@@ -13,10 +13,12 @@ require_once 'core/component.php';
 require_once 'libs/PHPMailer/PHPMailerAutoload.php';
 require_once 'components/AuthComponent.php';
 require_once 'components/DbComponent.php';
+require_once 'components/ProfileSettingsComponent.php';
 
 
 DbComponent::register('db');
 AuthComponent::register('auth');
+ProfileSettingsComponent::register('settings');
 
 $app = App::getInstance();
 $app->run();

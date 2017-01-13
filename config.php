@@ -16,3 +16,4 @@ date_default_timezone_set('Australia/Sydney');
 
 define('SECRET_KEY', 'qwerty12345');
 define('SITE_URL', $_SERVER['HTTP_HOST']);
+define('DOWNLOAD_DIR', dirname(__FILE__).'/web/downloads/');

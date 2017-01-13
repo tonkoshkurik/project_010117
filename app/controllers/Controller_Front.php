@@ -14,7 +14,8 @@ class Controller_Front extends Controller
 
             switch ($this->check_user_role()) {
                 case 1:
-                    return $this->view->render('administrator/index.php');
+                    header('Location: /administrator');
+//                    return $this->view->render('administrator/index.php');
                     break;
                 case 2:
                     return $this->view->render('agency/index.php');
